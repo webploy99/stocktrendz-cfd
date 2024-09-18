@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>株式ポートフォリオ管理</title>
+   <link rel="icon" href="./images/icon.png">
+   <link rel="stylesheet" href="./style.css">
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+   <section class="fixed top-0 left-0 bg-white w-full z-50 overflow-hidden">
+      <div class="flex gap-10 justify-between items-center p-6">
+         <div class="w-80 lg:w-96"><img src="./images/header.png" class="w-full"></div>
+         <div class="text-2xl lg:hidden"><ion-icon onclick="Show()" name="menu" class="border p-1 shadow"></ion-icon></div>
+         <nav id="navSide" class="fixed top-5 left-0 w-full h-full m-auto hidden bg-slate-200 mt-20 lg:block lg:mt-0 lg:relative lg:bg-transparent">
+            <div class="absolute top-3 right-3 text-2xl lg:hidden"><ion-icon onclick="Hide()" name="close" class="border p-1 border-white shadow"></ion-icon></div>
+            <div class="text-xl lg:text-2xl font-[500] border lg:border-none mx-auto h-full flex justify-center items-center">
+               <ul class="flex flex-col justify-between w-full items-center lg:flex-row gap-5 lg:gap-10">
+                  <li><a href="">無料で3つの優良株を手に入れる</a></li>
+                  <li><a href="">AI株式市場の分析予測</a></li>
+                  <li><a href="">私たちを選ぶ理由</a></li>
+                  <li><a href="">戦略紹介</a></li>
+                  <li><a href="">お客様の声</a></li>
+                  <li><a href="">ご利用までの流れ</a></li>
+                  <li><a href="">よくある質問</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+   </section>
+
+   <section class="overflow-hidden">
+      <div class=" mt-28 pb-40">
+         <!-- banner -->
+         <div class="">
+            <div class="bg relative text-white  text-4xl font-[500] flex gap-5 flex-col justify-center items-center py-10 px-5">
+               <div class="md:absolute md:top-2 right-0 flex justify-end w-full">
+                  <div class="flex gap-5 flex-row md:flex-col w-48">
+                     <div><img src="./images/banr1.png" class="md:w-6/12 lg:w-10/12"></div>
+                     <div><img src="./images/banr1.png" class="md:w-6/12 lg:w-10/12"></div>
+                  </div>
+               </div>
+               <div class="flex gap-5 flex-col justify-center items-center py-10">
+                  <div class="flex gap-5 mt-10">
+                     <div><img src="./images/ban1.png" class="w-9/12"></div>
+                     <div><img src="./images/ban2.png" class="w-9/12"></div>
+                     <div><img src="./images/ban3.png" class="w-9/12"></div>
+                  </div>
+                  <span class="text-2xl md:text-4xl">AIによる精密な予測</span>
+                  <div class="bg-center bg-no-repeat flex justify-center items-center w-full md:w-11/12 h-16 md:h-20" style="background-image: url(./images/frame.png);">
+                     <span class="text-xl md:text-2xl">正確な売買のタイミングを把握せよ</span>
+                  </div>
+                  <span class="text-xl md:text-2xl mt-10 font-bold tracking-wider text-center">最適な取引戦略をご案内いたします買い/売りの最適なシグナル</span>
+                  <div class="bg-[#ffa454] w-full sm:w-8/12 py-6 text-2xl text-center rounded-2xl font-semibold"><span class="">急騰株情報を受け取る</span></div>
+               </div>
+            </div>
+         </div>
+
+         <!-- post1 -->
+         <div class="max-w-[1800px] mx-auto">
+            <div class="flex justify-center items-center py-28">
+               <div class="grid grid-cols-12 flex items-center text-2xl md:text-6xl font-bold text-gray-800">
+                  <span class="col-span-3 text-end">こんな</span>
+                  <div class="col-span-3 relative flex justify-center items-center">
+                     <div><img src="./images/frame2.png"></div>
+                     <span class="text-white absolute">お悩み</span>
+                  </div>
+                  <span class="col-span-6 text-start">はありませんか？</span>
+               </div>
+            </div>
+   
+            <div class="grid md:grid-cols-3 gap-4">
+               <div>
+                  <div class="flex items-center text-xl md:text-3xl font-semibold text-gray-800 px-3">
+                     <div class="relative p-3 flex justify-center items-center">
+                        <div><img src="./images/frame3.png"></div>
+                        <span class="text-white absolute">買/売</span>
+                     </div>
+                     <span>最適なタイミングがわからない</span>
+                  </div>
+                  <div class="p-4">
+                     <div><img src="./images/pic1.png" class="w-full"></div>
+                     <div class="flex flex-col text-xl gap-5 p-4 font-[500]">
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>仕事が忙しくて、定期的に株価の動向を確認する時間がありません</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>空いた時間を活用してリターンを得たいです</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>資産運用の機会を増やしたい</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- 2 -->
+               <div>
+                  <div class="flex items-center md:justify-center text-xl md:text-3xl font-semibold text-gray-800 px-3">
+                     <div class="relative p-3 flex justify-center items-center">
+                        <div><img src="./images/frame3.png"></div>
+                        <span class="text-white absolute">安全に楽しく</span>
+                     </div>
+                     <span>利益を得る…</span>
+                  </div>
+                  <div class="p-4">
+                     <div><img src="./images/pic2.png" class="w-full"></div>
+                     <div class="flex flex-col text-xl gap-5 p-4 font-[500]">
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>じっくり選ぶ時間がありません</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>買ったら下がリ売ったら上がる</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>いろんな株投資の本を読んだけれどうまくいかない</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- 3 -->
+               <div> 
+                  <div class="flex items-center text-xl md:text-3xl font-semibold text-gray-800 px-3">
+                     <span>トレードで勝てず</span>
+                     <div class="relative p-3 flex justify-center items-center">
+                        <div><img src="./images/frame3.png"></div>
+                        <span class="text-white absolute">資金が増えない</span>
+                     </div>
+                     <span>…</span>
+                  </div>
+                  <div class="p-4">
+                     <div><img src="./images/pic3.png" class="w-full"></div>
+                     <div class="flex flex-col text-xl gap-5 p-4 font-[500]">
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>損失が怖くて-步踏み出せない</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>投資のアドバイスがほしい</span>
+                        </div>
+                        <div class="flex gap-4">
+                           <div class="w-12"><img src="./images/correct.png"></div>
+                           <span>いつでも相談できる環境にいたい</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- post2 -->
+          <div class="bg-[#fce3cf]">
+             <div class="max-w-[1800px] mx-auto py-10 p-4">
+                <div class="font-semibold flex flex-col items-center gap-5 text-gray-800">
+                   <span class="text-2xl md:text-6xl">そのお悩み、私たちのチームが解決いたします！</span>
+                   <span class="text-xl md:text-4xl mt-5">最新AI抽出銘柄が、次々に短期上昇!</span>
+                   <span class="text-xl md:text-4xl">人智を超元た銘柄選定の実力をご体感ください</span>
+
+                   <div class="py-10">
+                     <img src="./images/img1.png">
+                   </div>
+                </div>
+             </div>
+          </div>
+
+         <!-- post3 -->
+         <div>
+           <img src="./images/img2.png" class="w-full md:h-80">
+         </div>
+
+         <!-- post4 -->
+         <div class="max-w-[1800px] mx-auto py-10">
+            <div class="flex items-end justify-center gap-3 text-3xl md:text-6xl font-semibold text-gray-800">
+               <span>私たちを選ぶ</span>
+               <div class="flex flex-col">
+                  <div><img src="./images/33.png"></d>
+                     <span class="text-orange-300 md:text-8xl">3</span>
+                  </div>
+               </div>
+               <div>つの理由</div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-5 py-10 mt-10 p-4">
+               <div class="grid md:grid-cols-3 gap-5">
+                  <div class="flex flex-col gap-5">
+                     <div><img src="./images/pic4.png"></div>
+                     <p class="text-md font-[600] leading-9">私たちには20年以上の経験を持つ講師がいます。彼らは、会社の財務、業界のトレンド、K線チャート、そしてAIによるビッグデータ分析に基づいて、最適な推奨を提供します。</p>
+                  </div>
+                  <div class="flex flex-col gap-5">
+                     <div><img src="./images/pic5.png"></div>
+                     <p class="text-md font-[600] leading-9">ここでは、専用のシステムがあり、講師が一対一で指導を行います。何か困難があったり、相談したいことがあれば、LINEを通じてサポートします。どうぞお気軽にご連絡ください。</p>
+                  </div>
+                  <div class="flex flex-col gap-5">
+                     <div><img src="./images/pic6.png"></div>
+                     <p class="text-md font-[600] leading-9">※AIが採用するアルゴリズムは、人間の限界を超える精度で市場を選択し、短期的な市場ノイズに影響されない決定を行います。これにより、資産を安全かつ効率的に管理し、利益を最大化するチャンスを得ることができます。</p>
+                  </div>
+
+               </div>
+               <div><img src="./images/img3.png"></div>
+            </div>
+         </div>
+         <!-- post5 -->
+         <div>
+            <div><img src="./images/0.png" class="w-full md:h-[200px]"></div>
+            <div><img src="./images/1.png" class="w-full md:h-[550px]"></div>
+            <div><img src="./images/2.png" class="w-full md:h-[550px]"></div>
+         </div>
+
+         <!-- post6 -->
+          <div class="bg-blue-500">
+            <div class="max-w-[1800px] mx-auto py-10 p-4">
+               <div class="flex gap-5 flex-col justify-center items-center py-10 text-white font-semibold">
+                  <span class="text-2xl md:text-6xl ">一度にすべての投資問題を解決</span>
+                  <span class="text-xl md:text-4xl mt-5">銘柄選定が上手くいかない</span>
+                  <span class="text-xl md:text-4xl">保有銘柄が塩濆けになっている</span>
+                  <span class="text-xl md:text-4xl mt-10 font-bold tracking-wider text-center">買い時・売り時がわからない惱みがたくさんある</span>
+                  <div class="bg-[#ffa454] w-full sm:w-3/12 py-7 text-2xl text-center rounded-2xl font-semibold"><span class="">急騰株情報を受け取る</span></div>
+               </div>
+            </div>
+          </div>
+
+          <!-- post7 -->
+         <div class="bg-[#fce3cf]">
+            <div class="max-w-[1800px] mx-auto py-10 md:py-20 p-4">
+               <span class="text-3xl md:text-6xl font-semibold text-gray-800 text-center block">トレード戦略の一部ご紹介</span>
+               <div class="grid md:grid-cols-2 gap-5 md:gap-40 py-10 md:py-20">
+                  <div><img src="./images/img5.png"></div>
+                  <div><img src="./images/img6.png"></div>
+               </div>
+               <div class="flex flex-col justify-center items-center text-md leading-8 font-semibold text-gray-800">
+                  <p>※当社は毎日、さまざまな要因によって引き起こされた株価変動に関する情報を発信しています。</p>
+                  <p>※急騰株に加えて、長期保有または短期保有をお勧めする株の詳細も公開しています。</p>
+               </div>
+            </div>
+         </div>
+
+         <!-- post8 -->
+         <div>
+            <div><img src="./images/img7.png" class="w-full md:h-[500px]"></div>
+            <div><img src="./images/img8.png" class="w-full md:h-[500px]"></div>
+            <div><img src="./images/img9.png" class="w-full md:h-[400px]"></div>
+            <span class="text-3xl md:text-6xl font-semibold text-gray-800 text-center block mt-5">ご利用までの流れ</span>
+         </div>
+
+         <!-- post8 -->
+         <div class="text-2xl md:text-5xl font-semibold text-gray-800 py-12">
+            <div class="">
+               <div class="bg-[#fbe4d0] py-12 md:py-20 p-4">
+                  <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-center items-center md:justify-start gap-5 md:gap-10">
+                     <span class="md:text-6xl">STEP1</span>
+                     <span class="">LINE友だち追加</span>
+                  </div>
+               </div>
+               <div class="bg-[#fdcfa7] py-12 md:py-20 p-4">
+                  <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-center items-center md:justify-start gap-5 md:gap-10">
+                     <span class="md:text-6xl">STEP2</span>
+                     <span class="">無料で優良株の情報を入手する</span>
+                  </div>
+               </div>
+               <div class="bg-[#feba7e] py-12 md:py-20 p-4">
+                  <div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-center items-center md:justify-start gap-5 md:gap-10">
+                     <span class="md:text-6xl">STEP3</span>
+                     <span class="">あなたの選択に基づいて、富への旅を始めましょう！</span>
+                  </div>
+               </div>
+               <div class="py-5">
+                  <span class="text-3xl font-semibold block text-center mt-5">お客様からの声</span>
+               </div>
+            </div>
+         </div>
+
+         <!-- post8 -->
+         <div>
+            <div><img src="./images/5.png" class="w-full md:h-[600px]"></div>
+            <div><img src="./images/4.png" class="w-full md:h-[600px]"></div>
+            <div><img src="./images/6.png" class="w-full md:h-[600px]"></div>
+            <div><img src="./images/4.1.png" class="w-full md:h-[600px]"></div>
+            <div><img src="./images/6.1.png" class="w-full md:h-[600px]"></div>
+            <div><img src="./images/4.2.png" class="w-full md:h-[600px]"></div>
+         </div>
+
+         <!-- post9 -->
+         <div class=" py-10">
+            <div class="max-w-[1600px] mx-auto flex flex-col gap-5 p-4">
+               <span class="text-3xl md:text-6xl text-gray-800 font-semibold block text-center mt-5">よくある質問</span>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#ffa454] text-white text-2xl md:text-5xl font-semibold">Q</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">サービス利用の手続きはどのようにすればいいですか？</span>
+               </div>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#307ef3] text-white text-2xl md:text-5xl font-semibold">A</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">LINEで友だち追加していただき、「2024年急騰株」とメッセージを送っていただければ、無料でご利用いただけます！</span>   
+               </div>
+
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#ffa454] text-white text-2xl md:text-5xl font-semibold">Q</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">このサービスは無料ですか？</span>
+               </div>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#307ef3] text-white text-2xl md:text-5xl font-semibold">A</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">当社は、少しでもお客様に利益を出していただき、AIを活用した資産運用を正しく行っていただく為に、無料版を提供しております。 まずはAIの実力をご理解いただくために、お気軽に株投資を行っていただければと思っております。</span>   
+               </div>
+
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#ffa454] text-white text-2xl md:text-5xl font-semibold">Q</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">未経験でも利用可能でしょうか？</span>
+               </div>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#307ef3] text-white text-2xl md:text-5xl font-semibold">A</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">はい！全く問題ございません。
+                     むしろ初心者の方こそ、最初からプロの投資助言を利用されるべきだと考えております。
+                     弊社では、専属の担当者が買い付けのタイミングから利益確定またはロスカット値の指示を行うなど、初心者の方でもわかりやすい投資助言を実践しています。</span>   
+               </div>
+
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#ffa454] text-white text-2xl md:text-5xl font-semibold">Q</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">資金はどのくらい必要でしょうか？</span>
+               </div>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#307ef3] text-white text-2xl md:text-5xl font-semibold">A</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">お客様のご状況によって異なります。 数万円からの少額でも十分に利益を得られますが、銘柄の株価によっては購入できない場合もございます。自己資金と相談しながら無理のない範囲で推奨した銘柄の売買をお試しください。</span>   
+               </div>
+
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#ffa454] text-white text-2xl md:text-5xl font-semibold">Q</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">推奨銘柄で利益が発生した場合、成功報酬,その他に支払うべき費用はありますか？</span>
+               </div>
+               <div class="flex gap-3 md:gap-5 items-center">
+                  <div>
+                     <span class="rounded-full flex justify-center items-center size-10 md:size-14 bg-[#307ef3] text-white text-2xl md:text-5xl font-semibold">A</span>
+                  </div>
+                  <span class="text-md md:text-2xl font-semibold text-gray-800">当社のサービスでは、原則としてお客様から成功報酬等をいただくことは一切ございません。</span>   
+               </div>
+
+            </div>
+         </div>
+
+         <!-- post10 -->
+         <div class="bg-blue-500">
+            <div class="max-w-[1800px] mx-auto py-10 p-4">
+               <div class="flex gap-5 flex-col justify-center items-center py-10 text-white font-semibold">
+                  <span class="text-2xl md:text-6xl ">市場のトレンドを予測することが難しい</span>
+                  <span class="text-xl md:text-4xl mt-5">情報不足で誤った判断をしてしまう</span>
+                  <span class="text-xl md:text-4xl">市場の変動により心が不安定になる</span>
+                  <span class="text-xl md:text-4xl mt-10 font-bold tracking-wider text-center">株価の急激な変動に対応できない冷静な判断ができない</span>
+                  <div class="bg-[#ffa454] w-full sm:w-3/12 py-7 text-2xl text-center rounded-2xl font-semibold"><span class="">急騰株情報を受け取る</span></div>
+               </div>
+            </div>
+          </div>
+
+         <!-- post11 -->
+         <div class="">
+            <div class="max-w-[1800px] mx-auto py-10 p-4">
+               <div class="flex gap-5 flex-col justify-center items-center py-10 text-gray-800 font-semibold">
+                  <span class="text-2xl md:text-6xl ">お問い合わせ</span>
+                  <span class="text-xl md:text-4xl mt-5">ご不明点や、投資についてのご相談などがあれば、 お気軽にお問い合わせください。</span>
+                  <div class="flex gap-10 md:gap-20 mt-10">
+                     <div class="bg-[#ffa454] text-2xl md:text-4xl text-white size-40 md:size-56 rounded-full flex gap-1 flex-col justify-center items-center p-5"><img src="./images/line.png" class="w-8/12 md:w-auto"> LINE</div>
+                     <div>
+                        <div class="bg-blue-500 text-2xl md:text-4xl text-white size-40 md:size-56 rounded-full flex gap-1 flex-col justify-center items-center p-5"><img src="./images/phone.png" class="w-5/12 md:w-auto"> 電話</div>
+                        <div class="py-5">
+                           <span class="text-xl md:text-3xl text-gray-800">平日13時〜18時</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+          </div>
+   </section>
+
+   <!-- footer -->
+   <section class="overflow-hidden py-10 bg-[#575656]">
+      <div class="max-w-[1600px] mx-auto text-white p-4">
+         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-20 font-[500]">
+            <div class="text-xl">
+               <p>当商品は利益が出る事を保証するものではありません。
+                  先物取引は価格変動リスクを伴い、証拠金を上回る取引を行う事がありますので、場合によっては投資金額を上回る損失が出る可能性があります。先物取引には取引業者の売買手数料がかかります。当方の助言に基づいてお客様が投資を行った成果はすべてお客様に帰属します。当方の助言は、お客様を拘束するものではなく、有価証券等の売買を強制するものではありません。売買の結果 お客様に損害が発生することがあっても、当方はこれを賠償する責任は負いません。</p>
+                  <p class="mt-5">トレードマスターラボ：金融商品取引業者（投資助言
+                     代理業）　近畿財務局長（金商）第317号
+                     一般社団法人 日本投資顧問業協会会員
+                     会員番号 022-00257</p>
+            </div>
+
+            <div class="text-xl md:text-2xl flex flex-col gap-5">
+               <p>私たちを選ぶ理由 </p>
+               <p>戦略紹介</p>
+               <p>お客様の声</p>
+               <p>よくある質問</p>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="overflow-hidden">
+      <div onclick="ShowPopUp()" class="floating-button">
+         <button class="btn-line">
+            ▶急騰株情報をLINEで受け取る
+         </button>
+      </div>
+   
+      <div class="pop_up w-full h-screen bg-[#00000056] hidden justify-center items-center fixed top-0 left-0 p-3" id="PopUp">
+         <div class="box max-w-[400px] w-full bg-white py-10 px-5 sm:p-10 rounded-lg relative">
+             <div class="absolute top-3 right-3 text-2xl"><ion-icon onclick="HidePopUp()" name="close" class="border p-1 border-white shadow"></ion-icon></div>
+             <p class="text-lg text-gray-700 py-5 font-semibold">
+               LINEを追加後、 <span class="text-red-500">「上昇」</span>と送信すると、近日中に上昇が予測される3つの株式情報を無料で入手できます。
+             </p>
+             <div class="pop_btn flex justify-between items-center gap-5 sm:gap-10 *:w-full *:text-center *:text-sm sm:*:text-md *:py-4 *:rounded-lg *:font-bold *:text-white *:cursor-pointer">
+                 <div class="green_btn bg-green-500" onclick="LineURL()">
+                     私は必要です
+                 </div>
+                 <div class="red_btn bg-red-500" onclick="HidePopUp()">
+                     放棄します
+                 </div>
+             </div>
+         </div>
+     </div>
+   </section>
+
+   <script>
+      function Show () {
+         document.getElementById('navSide').style.display = 'block';
+      }
+      function Hide () {
+         document.getElementById('navSide').style.display = 'none';
+      }
+
+      let pop_up = document.getElementById("PopUp");
+        function ShowPopUp(){
+            pop_up.style.display = "flex";
+        }
+        function HidePopUp(){
+            pop_up.style.display = "none";
+        }
+
+        function LineURL(){
+            location.href = "";
+        }
+   </script>
+</body>
+</html>
